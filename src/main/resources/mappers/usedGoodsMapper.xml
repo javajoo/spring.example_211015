@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.lesson02.dao.UsedGoodsDAO">
+
+	<!-- 컨트롤 누르면서 클릭해서 경로로 이동되는지 확인해야 한다. -->
+	<!-- id= dao resultType= UsedGoods 셀렉트 문이 실행되고 나서 한행의 결과가 담긴다. -->
+	<select id="selectUsedGoodsList" resultType="com.example.lesson02.model.UsedGoods">
+	<!-- 주소에 공백이 들어가 있으면 안뜬다. -->
+	<!-- 아래 방식으로 하는게 관례적이다!! -->
+		SELECT
+			*
+		FROM
+			`used_goods`
+	</select>
+</mapper>
