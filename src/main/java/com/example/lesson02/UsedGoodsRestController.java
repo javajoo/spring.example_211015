@@ -14,7 +14,7 @@ public class UsedGoodsRestController {
 
 	@Autowired
 	private UsedGoodsBO usedGoodsBO;
-
+	
 	@RequestMapping("/lesson02/ex01")
 	public List<UsedGoods> ex01() {
 		return usedGoodsBO.getUsedGoodslist();
