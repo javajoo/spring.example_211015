@@ -4,6 +4,7 @@
  
  <mapper namespace="com.example.lesson03.dao.ReviewDAO">
  	<!-- 셀렉트를 하면 한행의 결과값을 받는다.  -->
+ 	<!-- resultType은 select문 밖에 없다.  -->
  	<select id="selectReview" 
  	parameterType="int"
  	resultType="com.example.lesson03.model.Review">
@@ -35,4 +36,31 @@
  			`id` = #{id}
  			<!-- 고정된 값이 아닌 유동적인 값 가져올 수 있다. -->
  	</select>
+ 	<!-- insert문은  parameterType까지만 넣어주면 된다.-->
+ 	<insert id="insertReview" parameterType="com.example.lesson03.model.Review">
+ 	<!-- id 빼고 createdAt, updatedAt 까지 넣어준다!! -->
+ 		INSERT INTO `new_review`
+ 		(
+ 			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+ 		)
+ 		
+ 		VALUES 
+ 		(
+ 			#{storeId}
+ 			, #{menu}
+ 			, #{userName}
+ 			, #{point}
+ 			, #{review}
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 	
+ 	
+ 	</insert>
  </mapper>
