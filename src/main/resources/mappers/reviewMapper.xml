@@ -61,6 +61,53 @@
  			, NOW()
  		)
  	
- 	
  	</insert>
+ 	
+ 	<!-- 위 방법이랑 합칠 수 없기 때문에 따로 만들어줘야 한다. -->
+ 	<!-- 파라미터가 여러개 : map -->
+ 	<insert id="insertReviewAsField" parameterType="map">
+ 		INSERT INTO `new_review`
+ 		(
+ 			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+ 		)
+ 		
+ 		VALUES 
+ 		(
+ 			#{storeId}
+ 			, #{menu}
+ 			, #{userName}
+ 			, #{point}
+ 			, #{review}
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 	</insert>
+ 	
+ 	<update id="updateReviewAsId" parameterType="map">
+ 		UPDATE `new_review`
+ 		SET
+ 			`review` = #{review}
+ 			, `updatedAt` = NOW()
+ 		WHERE
+ 			`id` = #{id}
+ 			<!-- where절 반드시 해줘야 한다. -->
+ 	</update>
+ 	
+ 	<!-- parameterType 하나면 안써도 된다. -->
+ 	<delete id="deleteReviewById" parameterType="int">
+ 		DELETE 
+ 		FROM
+ 			`new_review`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
+ 	
+ 	
+ 	
  </mapper>

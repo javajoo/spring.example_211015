@@ -23,4 +23,23 @@ public class ReviewBO {
 	
 	// ctrl+shift+r 화면 열기 (유용하다)
 	}
+	
+	public int addReviewAsField(int storeId, String menu, String userName, 
+			Double point, String review) {
+		// desc 정보 보고 null, nullable 확인하고 정의해준다.
+		// id, createdAt, updatedAt은 생략 가능하다.
+		
+		return reviewDAO.insertReviewAsField(storeId, menu, userName, point, review);
+	}
+	
+	// id를 통해서 리뷰를 update 하니까 updateReviewAsId로 해주면 된다.
+	public int updateReviewAsId(int id, String review) {
+		
+		return reviewDAO.updateReviewAsId(id, review);
+	}
+	
+	public int deleteReviewById(int id) {
+		return reviewDAO.deleteReviewById(id);
+	}
+	
 }

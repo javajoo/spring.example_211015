@@ -11,6 +11,7 @@ import com.example.lesson03.model.Review;
 @RestController
 public class Lesson03Ex02RestController {
 	
+	// 무조건 하나만 있어야 한다.
 	@Autowired
 	private ReviewBO reviewBO;
 	
@@ -30,6 +31,17 @@ public class Lesson03Ex02RestController {
 		
 		
 	}
+	
+	//localhost:8080/lesson03/ex02/2
+	@RequestMapping("/2")
+	public String ex02_2() {
+		// int storeId, String menu, String userName, Double point, String review
+		int rowCount = reviewBO.addReviewAsField(4, "콤비네이션R", "신바다", 5.0, "역시 맛있다!!!");
+		
+		return "success row count:" + rowCount; 
+	}
+	
+	
 	
 	
 }
