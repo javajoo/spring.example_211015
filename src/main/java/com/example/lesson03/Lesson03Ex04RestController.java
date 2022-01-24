@@ -11,15 +11,15 @@ import com.example.lesson03.bo.ReviewBO;
 public class Lesson03Ex04RestController {
 
 	@Autowired
-	private ReviewBO reviewBO;
 	
+	private ReviewBO reviewBO;
 	//http://localhost:8080/lesson03/ex04?id=23
 	@RequestMapping("/lesson03/ex04")
 	public String ex04(
 			@RequestParam("id") int id) {
 		
-		// TODO : BO delete
 		int rowCount = reviewBO.deleteReviewById(id);
+		// TODO : BO delete
 		
 		return "삭제 완료 : " + rowCount;
 	}
