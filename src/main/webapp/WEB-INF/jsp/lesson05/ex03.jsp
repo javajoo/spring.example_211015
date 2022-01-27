@@ -50,10 +50,7 @@
 	
 	<fmt:formatDate value="${today}" pattern="yyyy/MM/dd HH:mm:ss" />
 	
-	<h3>String을 Date 객체로 변환 -> fmt:parseDate</h3>
-	
-	<fmt:parseDate value="${pattern1}" pattern="yyyy년 MM월 dd일 HH시 mm분 ss초" var="date2" /> 
-	Date 객체: ${date2}
+
 	
 	
 	
