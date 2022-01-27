@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class Lesoon05Controller {
+public class Lesson05Controller {
 
 	//http://localhost:8080/lesson05/ex01
 	@RequestMapping("/lesson05/ex01")
@@ -64,7 +64,7 @@ public class Lesoon05Controller {
 			) {
 		
 		Date today = new Date();
-		model.addAttribute(today);
+		model.addAttribute("today",today);
 		
 		return "lesson05/ex03";
 	}
