@@ -22,5 +22,11 @@ public class UserBO {
 		// 무조건 마지막 하나만 가져오면 되니까 파라미터 필요없다.
 		return userDAO.selectLastUser();
 	}
+	
+	// 있는지 없는지 확인: boolean
+	public boolean existUserByName(String name) {
+		return userDAO.existUserByName(name);
+	}
+	
 
 }
